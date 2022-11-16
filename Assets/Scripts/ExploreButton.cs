@@ -5,8 +5,6 @@ using UnityEngine;
 public class ExploreButton : MonoBehaviour
 {
     SpawnerLand spawnerLand;
-
-    Vector3 camPosition;
     void Start()
     {
         spawnerLand = FindObjectOfType<SpawnerLand>();
@@ -14,7 +12,7 @@ public class ExploreButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        spawnerLand.CreateLandLeft();
+        spawnerLand.CreateLandLeft(transform.position, transform.parent.position);
         gameObject.SetActive(false);
     }
 }

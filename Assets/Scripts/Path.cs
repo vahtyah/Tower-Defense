@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class Path : MonoBehaviour
 {
-    public List<Transform> pathList = new List<Transform>();
+    public Dictionary<Vector3, Node> pathDic = new Dictionary<Vector3, Node>();
+
+    public Node GetNode(Vector3 position)
+    {
+        if (pathDic.ContainsKey(position))
+        {
+            return pathDic[position];
+        }
+        return null;
+    }
 }
