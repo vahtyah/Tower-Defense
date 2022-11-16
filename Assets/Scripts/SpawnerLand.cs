@@ -17,15 +17,16 @@ public class SpawnerLand : MonoBehaviour
 
     public void CreateLandLeft()
     {
-        lastPosition += direction[3];
-        GameObject land = Instantiate(landPrefabs,lastPosition,Quaternion.identity,transform);
-        Transform pathParent = land.transform.Find("Path");
-        if(pathParent != null)
+        lastPosition += direction[1];
+        GameObject land = Instantiate(landPrefabs, lastPosition, Quaternion.identity, transform);
+        Transform Path = land.transform.Find("Path");
+        List<Transform> newList = new List<Transform>();
+        if (Path != null)
         {
-            foreach (Transform child in pathParent)
-            {
-                path.pathList.Add(child);
-            }
+            foreach(Transform child in Path)
+                newList.Add(child);
+            newList.Reverse();
+
         }
     }
 }
