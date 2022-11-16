@@ -26,7 +26,7 @@ public class SpawnerLand : MonoBehaviour
             foreach(Transform child in Path)
                 newList.Add(child);
             newList.Reverse();
-
+            path.pathList.InsertRange(0, newList);
         }
     }
 }
