@@ -7,17 +7,43 @@ public class ExploreButton : MonoBehaviour
     [SerializeField] GameObject[] tilePrefabs;
 
     SpawnerLand spawnerLand;
+    Path path;
 
     void Start()
     {
         spawnerLand = FindObjectOfType<SpawnerLand>();
+        path = FindObjectOfType<Path>();
     }
 
     private void OnMouseDown()
     {
-        int rand = Random.Range(0, tilePrefabs.Length);
-        print(rand + " " + tilePrefabs[rand]);
-        spawnerLand.CreateLandLeft(tilePrefabs[rand] ,transform.position, transform.parent.position);
+        List<GameObject> list = logic();
+        int rand = Random.Range(0, list.Count);
+        spawnerLand.CreateLandLeft(list[rand] ,transform.position, transform.parent.position);
         gameObject.SetActive(false);
+    }
+
+    private List<GameObject> logic()
+    {
+        List<GameObject> listGame = new List<GameObject>();
+        listGame.AddRange(tilePrefabs);
+
+        for (int i = 0; i < listGame.Count; i++)
+        {
+            Transform explore = listGame[i].transform.Find("Explore");
+            if (explore != null)
+            {
+                foreach (Transform item in explore)
+                {
+                    Vector3 pos = new Vector3(transform.position.x + item.transform.position.x, 0, transform.position.z + item.transform.position.z);
+                    if (spawnerLand.PositionList.Contains(path.GetCoordinatesFromPosition(pos)))
+                    {
+                        listGame.Remove(listGame[i--]);
+                        break;
+                    }
+                }
+            }
+        }
+        return listGame;
     }
 }
