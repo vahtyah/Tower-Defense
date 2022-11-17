@@ -294,6 +294,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 135532071171349605, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
+      propertyPath: tilePrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 135532071171349605, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
+      propertyPath: tilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6494613226794349157, guid: 7a81de20997c56e41aa47dcce64e6aae, type: 3}
+    - target: {fileID: 135532071171349605, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
+      propertyPath: tilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 4655919468055447095, guid: d8325c7fed7026a4bacdf402917e48c8, type: 3}
+    - target: {fileID: 135532071171349605, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
+      propertyPath: tilePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 6522651294446619440, guid: e4eeba0e670b54f469602024a7e90c4b, type: 3}
     - target: {fileID: 522292075110688592, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -394,8 +410,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile Curve
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135532071171349605, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
+--- !u!1 &1117406686218064304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3995878556717559573, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
+  m_PrefabInstance: {fileID: 4104438516651179685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9124137275196788427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117406686218064304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c755853b578d24e895cea0383646c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefabs:
+  - {fileID: 6494613226794349157, guid: 7a81de20997c56e41aa47dcce64e6aae, type: 3}
+  - {fileID: 4655919468055447095, guid: d8325c7fed7026a4bacdf402917e48c8, type: 3}
+  - {fileID: 6522651294446619440, guid: e4eeba0e670b54f469602024a7e90c4b, type: 3}
 --- !u!4 &6447563669634141727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7030046358621745338, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}

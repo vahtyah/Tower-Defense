@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4113023027962962624, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
+      propertyPath: tilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4662780739849198311, guid: 5cc24cda495e39e40a26f8ecd5bff3ce, type: 3}
+    - target: {fileID: 4113023027962962624, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
+      propertyPath: tilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 5801297660353934752, guid: c44b5c53f13d8084e8c0ede7a4b13cdd, type: 3}
+    - target: {fileID: 4113023027962962624, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
+      propertyPath: tilePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 766910633735753776, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}
     - target: {fileID: 4596601774090344949, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -55,5 +67,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile Curve 270
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4113023027962962624, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
+    - {fileID: 9124137275196788427, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
+--- !u!1 &495807824906035175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1117406686218064304, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
+  m_PrefabInstance: {fileID: 675722338377829975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1713529639884277272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495807824906035175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c755853b578d24e895cea0383646c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefabs:
+  - {fileID: 4662780739849198311, guid: 5cc24cda495e39e40a26f8ecd5bff3ce, type: 3}
+  - {fileID: 5801297660353934752, guid: c44b5c53f13d8084e8c0ede7a4b13cdd, type: 3}
+  - {fileID: 766910633735753776, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}

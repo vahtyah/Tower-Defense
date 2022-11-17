@@ -11,6 +11,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile diagonal 270
       objectReference: {fileID: 0}
+    - target: {fileID: 1003863236066922266, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}
+      propertyPath: tilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 321295267530334225, guid: e50e8f084bd40a247bcf91af18d55756, type: 3}
+    - target: {fileID: 1003863236066922266, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}
+      propertyPath: tilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 321295267530334225, guid: e50e8f084bd40a247bcf91af18d55756, type: 3}
+    - target: {fileID: 5657735856462960583, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}
+      propertyPath: tilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4662780739849198311, guid: 5cc24cda495e39e40a26f8ecd5bff3ce, type: 3}
+    - target: {fileID: 5657735856462960583, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}
+      propertyPath: tilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 4662780739849198311, guid: 5cc24cda495e39e40a26f8ecd5bff3ce, type: 3}
+    - target: {fileID: 6303623750813413168, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}
+      propertyPath: tilePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1187111661360459345, guid: 8767383ba96307b46bee5714042beddd, type: 3}
+    - target: {fileID: 6303623750813413168, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}
+      propertyPath: tilePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 5331562619843889248, guid: c883abef707bdb342a75123b9acb4c98, type: 3}
     - target: {fileID: 8976648403451904421, guid: 10deb1f36652b93498c5a109798bc4fd, type: 3}
       propertyPath: m_RootOrder
       value: 0

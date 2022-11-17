@@ -721,8 +721,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3190711, y: 0.33814228, z: -0.121203065, w: 0.8770195}
-  m_LocalPosition: {x: -0.505259, y: 4.6576867, z: -3.9836009}
+  m_LocalRotation: {x: 0.15626065, y: 0.26198548, z: -0.04123894, w: 0.9514439}
+  m_LocalPosition: {x: -0.10902164, y: 2.929656, z: -2.4206166}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -802,7 +802,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc51546ac4e2b24bb99c1ccbd7adadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landPrefabs: {fileID: 1187111661360459345, guid: 8767383ba96307b46bee5714042beddd, type: 3}
 --- !u!4 &1493913538
 Transform:
   m_ObjectHideFlags: 0
@@ -811,7 +810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493913536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.50001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -932,7 +931,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 586185561, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
+    - {fileID: 135532071171349605, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
 --- !u!4 &1536370228 stripped
 Transform:
@@ -1045,6 +1046,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1888856953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3995878556717559573, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
+  m_PrefabInstance: {fileID: 1536370227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1888856958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888856953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c755853b578d24e895cea0383646c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefabs:
+  - {fileID: 1187111661360459345, guid: 8767383ba96307b46bee5714042beddd, type: 3}
 --- !u!4 &1908540229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5524709240588580408, guid: 33ccbd43e7f881c4eac3556fbd11761a, type: 3}
