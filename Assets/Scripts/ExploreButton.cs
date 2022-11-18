@@ -36,7 +36,10 @@ public class ExploreButton : MonoBehaviour
                 foreach (Transform item in explore)
                 {
                     Vector3 pos = new Vector3(transform.position.x + item.transform.position.x, 0, transform.position.z + item.transform.position.z);
-                    if (spawnerLand.PositionList.Contains(path.GetCoordinatesFromPosition(pos)))
+                    Vector3 direction = pos - transform.position;
+                    print(pos + " " +  (pos + direction));
+                    print(path.GetCoordinatesFromPosition(pos) + " " + path.GetCoordinatesFromPosition(pos + direction));
+                    if (spawnerLand.PositionList.Contains(path.GetCoordinatesFromPosition(pos)) || spawnerLand.PositionList.Contains(path.GetCoordinatesFromPosition(pos + direction)))
                     {
                         listGame.Remove(listGame[i--]);
                         break;
