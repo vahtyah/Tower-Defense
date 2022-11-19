@@ -18,8 +18,11 @@ public class ExploreButton : MonoBehaviour
     private void OnMouseDown()
     {
         List<GameObject> list = logic();
-        int rand = Random.Range(0, list.Count);
-        spawnerLand.CreateLandLeft(list[rand] ,transform.position, transform.parent.position);
+        if(list.Count > 0)
+        {
+            int rand = Random.Range(0, list.Count);
+            spawnerLand.CreateLandLeft(list[rand], transform.position, transform.parent.position);
+        }
         gameObject.SetActive(false);
     }
 

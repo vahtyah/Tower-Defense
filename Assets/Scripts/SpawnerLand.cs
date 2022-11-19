@@ -29,21 +29,23 @@ public class SpawnerLand : MonoBehaviour
             Vector2Int coordinates = path.GetCoordinatesFromPosition(posExplore.position);
             if (!positionList.Contains(coordinates)) positionList.Add(coordinates);
         }
-        //Transform Path = land.transform.Find("Path");
-        //List<Transform> newList = new List<Transform>();
-        //if (Path != null)
-        //{
-        //    foreach (Transform child in Path)
-        //        newList.Add(child);
-        //    foreach (Transform child2 in newList)
-        //    {
-        //        Node nodeParen = path.GetNode(positionParent);
-        //        if (nodeParen != null)
-        //        {
-        //            Node node = new Node(child2.position, nodeParen);
-        //            path.pathDic.Add(node.position, node);
-        //        }
-        //    }
-        //}
+
+
+        Transform Path = land.transform.Find("Path");
+        List<Transform> newList = new List<Transform>();
+        if (Path != null)
+        {
+            foreach (Transform child in Path)
+                newList.Add(child);
+            foreach (Transform child2 in newList)
+            {
+                Node nodeParen = path.GetNode(positionParent);
+                if (nodeParen != null)
+                {
+                    Node node = new Node(child2.position, nodeParen);
+                    path.pathDic.Add(node.position, node);
+                }
+            }
+        }
     }
 }
