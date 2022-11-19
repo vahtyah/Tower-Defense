@@ -6,6 +6,8 @@ public class ExploreButton : MonoBehaviour
 {
     [SerializeField] GameObject[] tilePrefabs;
 
+    Transform pathTransform;
+    List<Transform> points = new List<Transform>();
     SpawnerLand spawnerLand;
     Path path;
 
@@ -13,6 +15,11 @@ public class ExploreButton : MonoBehaviour
     {
         spawnerLand = FindObjectOfType<SpawnerLand>();
         path = FindObjectOfType<Path>();
+        pathTransform = transform.parent.Find("Path");
+        foreach (Transform child in pathTransform)
+        {
+            points.Add(child);
+        }
     }
 
     private void OnMouseDown()
