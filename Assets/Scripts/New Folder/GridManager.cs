@@ -8,7 +8,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] int gridHeight = 8;
     [SerializeField] int minPathLength = 30;
 
-    [SerializeField] GameObject pathTile;
+    [SerializeField] GridCellObject[] gridCells;
 
     PathGenerator pathGenerator;
 
@@ -29,7 +29,10 @@ public class GridManager : MonoBehaviour
     {
         foreach (Vector2Int pathCell in pathCells)
         {
-            Instantiate(pathTile, new Vector3(pathCell.x, 0f, pathCell.y), Quaternion.identity);
+            int neighbourValue = pathGenerator.getCellNeighbourValue(pathCell.x, pathCell.y);
+            GameObject pathTile = gridCells[neighbourValue].cellPrefab;
+            Quaternion quaternionTile = Quaternion.Euler(new Vector3(0f, gridCells[neighbourValue].yRotation, 0f));
+            Instantiate(pathTile, new Vector3(pathCell.x, 0f, pathCell.y), quaternionTile, transform);
             yield return new WaitForSeconds(.2f);
         }
         yield return null;
