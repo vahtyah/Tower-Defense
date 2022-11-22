@@ -18,8 +18,6 @@ public class PathGenerator
         pathCells = new List<Vector2Int>();
         int y = (int)(height / 2);
         int x = 0;
-        //for (int x = 0; x < width; x++)
-        //    pathCells.Add(new Vector2Int(x, y));
 
         while (x < width)
         {
@@ -27,7 +25,7 @@ public class PathGenerator
             bool validMove = false;
             while (!validMove)
             {
-                int move = Random.Range(0, 3);
+                int move = Random.Range(0, 4);
                 if (move == 0 || x % 2 == 0 || x > width - 2)
                 {
                     x++;
@@ -43,16 +41,41 @@ public class PathGenerator
                     y--;
                     validMove = true;
                 }
+                //else if(move == 3 && CellIsEmpty(x-1,y) && x < width - 2)
+                //{
+                //    x--;
+                //    validMove = true;
+                //}
+
             }
         }
         return pathCells;
     }
 
-    private bool CellIsEmpty(int x, int y)
+    public bool GenerateCrossroads()
+    {
+        for (int i = 0; i < pathCells.Count; i++)
+        {
+            Vector2Int pathCell = pathCells[i];
+            if (pathCell.x > 3 && pathCell.x < width - 3 && pathCell.y > 3 && pathCell.y < height - 3)
+                if (CellIsEmpty(pathCell.x, pathCell.y + 3) && CellIsEmpty(pathCell.x + 1, pathCell.y + 3) && CellIsEmpty(pathCell.x + 2, pathCell.y + 3) &&
+                    CellIsEmpty(pathCell.x - 1, pathCell.y + 2) && CellIsEmpty(pathCell.x, pathCell.y + 2) && CellIsEmpty(pathCell.x + 1, pathCell.y + 2) && CellIsEmpty(pathCell.x + 2, pathCell.y + 2) && CellIsEmpty(pathCell.x + 3, pathCell.y + 2) &&
+                    CellIsEmpty(pathCell.x - 1, pathCell.y + 1) && CellIsEmpty(pathCell.x, pathCell.y + 1) && CellIsEmpty(pathCell.x + 1, pathCell.y + 1) && CellIsEmpty(pathCell.x + 2, pathCell.y + 1) && CellIsEmpty(pathCell.x + 3, pathCell.y + 1) &&
+                    CellIsEmpty(pathCell.x + 1, pathCell.y) && CellIsEmpty(pathCell.x + 2, pathCell.y) && CellIsEmpty(pathCell.x + 3, pathCell.y) &&
+                    CellIsEmpty(pathCell.x + 1, pathCell.y - 1) && CellIsEmpty(pathCell.x + 2, pathCell.y - 1))
+                {
+                    pathCells.InsertRange(i + 1, new List<Vector2Int> { new Vector2Int(pathCell.x + 1, pathCell.y), new Vector2Int(pathCell.x + 2, pathCell.y), new Vector2Int(pathCell.x + 2, pathCell.y + 1), new Vector2Int(pathCell.x + 2, pathCell.y + 2), new Vector2Int(pathCell.x + 1, pathCell.y + 2), new Vector2Int(pathCell.x, pathCell.y + 2), new Vector2Int(pathCell.x, pathCell.y + 1) });
+                    return true;
+                }
+        }
+        return false;
+    }
+
+    public bool CellIsEmpty(int x, int y)
     {
         return !pathCells.Contains(new Vector2Int(x, y));
     }
-    private bool CellIsTaken(int x, int y)
+    public bool CellIsTaken(int x, int y)
     {
         return pathCells.Contains(new Vector2Int(x, y));
     }
