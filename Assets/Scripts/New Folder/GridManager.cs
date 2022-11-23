@@ -22,11 +22,12 @@ public class GridManager : MonoBehaviour
         while (pathLenth < minPathLength)
         {
             pathCells = pathGenerator.GeneratePath();
-            pathGenerator.GenerateCrossroads();
+            while(pathGenerator.GenerateCrossroads())
             pathLenth = pathCells.Count;
         }
         StartCoroutine(LayPathCells(pathCells));
         StartCoroutine(LaySceneryCells());
+        GetComponent<EnemyWayManager>().setPathCells(pathCells);
     }
 
     private IEnumerator LayPathCells(List<Vector2Int> pathCells)
