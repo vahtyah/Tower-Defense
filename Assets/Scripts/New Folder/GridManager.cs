@@ -27,7 +27,8 @@ public class GridManager : MonoBehaviour
         }
         StartCoroutine(LayPathCells(pathCells));
         StartCoroutine(LaySceneryCells());
-        GetComponent<EnemyWayManager>().setPathCells(pathCells);
+        print("Start");
+        GetComponent<EnemyWayManager>().setPathCells(pathGenerator.GenerateRoute());
     }
 
     private IEnumerator LayPathCells(List<Vector2Int> pathCells)

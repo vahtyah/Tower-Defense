@@ -247,9 +247,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a0b407dcd1d35445b323c98c1bb8352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridWidth: 16
-  gridHeight: 8
-  minPathLength: 40
+  gridWidth: 18
+  gridHeight: 10
+  minPathLength: 50
   pathCellObjects:
   - {fileID: 0}
   - {fileID: 0}

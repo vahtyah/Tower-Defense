@@ -1,12 +1,12 @@
-
-using JetBrains.Annotations;
 using System.Collections.Generic;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class PathGenerator
 {
     int width, height;
     List<Vector2Int> pathCells;
+    List<Vector2Int> route;
 
     public PathGenerator(int width, int height)
     {
@@ -41,7 +41,7 @@ public class PathGenerator
                     y--;
                     validMove = true;
                 }
-               
+
             }
         }
         return pathCells;
@@ -63,8 +63,8 @@ public class PathGenerator
                     pathCells.InsertRange(i + 1, new List<Vector2Int> { new Vector2Int(pathCell.x + 1, pathCell.y), new Vector2Int(pathCell.x + 2, pathCell.y), new Vector2Int(pathCell.x + 2, pathCell.y + 1), new Vector2Int(pathCell.x + 2, pathCell.y + 2), new Vector2Int(pathCell.x + 1, pathCell.y + 2), new Vector2Int(pathCell.x, pathCell.y + 2), new Vector2Int(pathCell.x, pathCell.y + 1) });
                     return true;
                 }
-                if(CellIsEmpty(pathCell.x + 1, pathCell.y + 1) && CellIsEmpty(pathCell.x + 2, pathCell.y + 1) &&
-                    CellIsEmpty(pathCell.x + 1, pathCell.y) && CellIsEmpty(pathCell.x + 2, pathCell.y) && CellIsEmpty(pathCell.x + 3, pathCell.y)&&
+                if (CellIsEmpty(pathCell.x + 1, pathCell.y + 1) && CellIsEmpty(pathCell.x + 2, pathCell.y + 1) &&
+                    CellIsEmpty(pathCell.x + 1, pathCell.y) && CellIsEmpty(pathCell.x + 2, pathCell.y) && CellIsEmpty(pathCell.x + 3, pathCell.y) &&
                     CellIsEmpty(pathCell.x - 1, pathCell.y - 1) && CellIsEmpty(pathCell.x, pathCell.y - 1) && CellIsEmpty(pathCell.x + 1, pathCell.y - 1) && CellIsEmpty(pathCell.x + 2, pathCell.y - 1) && CellIsEmpty(pathCell.x + 3, pathCell.y - 1) &&
                     CellIsEmpty(pathCell.x - 1, pathCell.y - 2) && CellIsEmpty(pathCell.x, pathCell.y - 2) && CellIsEmpty(pathCell.x + 1, pathCell.y - 2) && CellIsEmpty(pathCell.x + 2, pathCell.y - 2) && CellIsEmpty(pathCell.x + 3, pathCell.y - 2) &&
                     CellIsEmpty(pathCell.x, pathCell.y - 3) && CellIsEmpty(pathCell.x + 1, pathCell.y - 3) && CellIsEmpty(pathCell.x + 2, pathCell.y - 3))
@@ -77,6 +77,45 @@ public class PathGenerator
         return false;
     }
 
+    public List<Vector2Int> GenerateRoute()
+    {
+        Vector2Int direction = Vector2Int.right;
+        route = new List<Vector2Int>();
+        Vector2Int currentCell = pathCells[0];
+        while (currentCell.x < width - 1)
+        {
+            route.Add(currentCell);
+            if (CellIsTaken(currentCell + direction))
+            {
+            }
+            else if (CellIsTaken(currentCell + Vector2Int.up) && direction != Vector2Int.down)
+            {
+                direction = Vector2Int.up;
+
+            }
+            else if (CellIsTaken(currentCell + Vector2Int.down) && direction != Vector2Int.up)
+            {
+                direction = Vector2Int.down;
+
+            }
+            else if (CellIsTaken(currentCell + Vector2Int.right) && direction != Vector2Int.left)
+            {
+                direction = Vector2Int.right;
+            }
+            else if (CellIsTaken(currentCell + Vector2Int.left) && direction != Vector2Int.right)
+            {
+                direction = Vector2Int.left;
+            }
+            else
+            {
+                currentCell += Vector2Int.right;
+                throw new System.Exception("Sai vcl");
+            }
+            currentCell = currentCell + direction;
+        }
+        return route;
+    }
+
     public bool CellIsEmpty(int x, int y)
     {
         return !pathCells.Contains(new Vector2Int(x, y));
@@ -84,6 +123,10 @@ public class PathGenerator
     public bool CellIsTaken(int x, int y)
     {
         return pathCells.Contains(new Vector2Int(x, y));
+    }
+    public bool CellIsTaken(Vector2Int coordinates)
+    {
+        return pathCells.Contains(coordinates);
     }
     public int getCellNeighbourValue(int x, int y)
     {
