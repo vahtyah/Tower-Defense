@@ -22,16 +22,15 @@ public class GridManager : MonoBehaviour
         while (pathLenth < minPathLength)
         {
             pathCells = pathGenerator.GeneratePath();
-            while(pathGenerator.GenerateCrossroads())
+            pathGenerator.GenerateCrossroads();
             pathLenth = pathCells.Count;
         }
-        StartCoroutine(LayPathCells(pathCells));
-        StartCoroutine(LaySceneryCells());
-        print("Start");
+        LayPathCells(pathCells);
+        LaySceneryCells();
         GetComponent<EnemyWayManager>().setPathCells(pathGenerator.GenerateRoute());
     }
 
-    private IEnumerator LayPathCells(List<Vector2Int> pathCells)
+    private void LayPathCells(List<Vector2Int> pathCells)
     {
         foreach (Vector2Int pathCell in pathCells)
         {
@@ -39,12 +38,10 @@ public class GridManager : MonoBehaviour
             GameObject pathTile = pathCellObjects[neighbourValue].cellPrefab;
             Quaternion quaternionTile = Quaternion.Euler(new Vector3(0f, pathCellObjects[neighbourValue].yRotation, 0f));
             Instantiate(pathTile, new Vector3(pathCell.x, 0f, pathCell.y), quaternionTile, transform);
-            yield return new WaitForSeconds(.2f);
         }
-        yield return null;
     }
 
-    IEnumerator LaySceneryCells()
+    void LaySceneryCells()
     {
         for (int x = 0; x < gridWidth; x++)
         {
@@ -54,10 +51,8 @@ public class GridManager : MonoBehaviour
                 {
                     int randomSceneryCellIndex = Random.Range(0, sceneryCellObjects.Length);
                     Instantiate(sceneryCellObjects[randomSceneryCellIndex].cellPrefab, new Vector3(x, 0f, y), Quaternion.identity, transform);
-                    yield return new WaitForSeconds(.1f);
                 }
             }
         }
-        yield return null;
     }
 }
