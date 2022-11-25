@@ -23,18 +23,14 @@ public class EnemyWayManager : MonoBehaviour
     {
         if (pathCells != null && pathCells.Count > 1 && !enemyRunCompleted)
         {
+            
             Vector3 currentPos = enemyInstance.transform.position;
             Vector3 nextPos = new Vector3(pathCells[nextPathCellIndex].x, .2f, pathCells[nextPathCellIndex].y);
             enemyInstance.transform.position = Vector3.MoveTowards(currentPos, nextPos, Time.deltaTime * 2);
             if (Vector3.Distance(currentPos, nextPos) < 0.02f)
-            {
-                if (nextPathCellIndex >= pathCells.Count)
-                {
-                    enemyRunCompleted = true;
-                    print("Tuan");
-                }
-                else nextPathCellIndex++;
-            }
+                nextPathCellIndex++;
+            if (nextPathCellIndex >= pathCells.Count)
+                enemyRunCompleted = true;
         }
     }
 

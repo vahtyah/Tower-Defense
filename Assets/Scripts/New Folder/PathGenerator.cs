@@ -82,7 +82,7 @@ public class PathGenerator
         Vector2Int direction = Vector2Int.right;
         route = new List<Vector2Int>();
         Vector2Int currentCell = pathCells[0];
-        while (currentCell.x < width - 1)
+        while (currentCell.x < width)
         {
             route.Add(currentCell);
             if (CellIsTaken(currentCell + direction))
@@ -108,8 +108,7 @@ public class PathGenerator
             }
             else
             {
-                currentCell += Vector2Int.right;
-                throw new System.Exception("Sai vcl");
+                return route;
             }
             currentCell = currentCell + direction;
         }
