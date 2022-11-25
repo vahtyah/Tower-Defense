@@ -53,7 +53,7 @@ public class GridManager : MonoBehaviour
                 if (pathGenerator.CellIsEmpty(x, y))
                 {
                     int randomSceneryCellIndex = Random.Range(0, sceneryCellObjects.Length);
-                    Instantiate(sceneryCellObjects[randomSceneryCellIndex].cellPrefab, new Vector3(x, 0f, y), Quaternion.identity);
+                    Instantiate(sceneryCellObjects[randomSceneryCellIndex].cellPrefab, new Vector3(x, 0f, y), Quaternion.identity, transform);
                     yield return new WaitForSeconds(.1f);
                 }
             }
