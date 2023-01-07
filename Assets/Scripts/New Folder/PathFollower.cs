@@ -9,7 +9,7 @@ public class PathFollower : MonoBehaviour
     bool enemyRunCompleted;
     private void OnEnable()
     {
-        pathCells = GameObject.Find("GridManager").GetComponent<EnemyWayManager>().PathCells;
+        pathCells = FindObjectOfType<EnemyWayManager>().PathCells;
         enemyRunCompleted = false;
         nextPathCellIndex = 0;
         transform.position = new Vector3(pathCells[nextPathCellIndex].x, .2f, pathCells[nextPathCellIndex].y);
