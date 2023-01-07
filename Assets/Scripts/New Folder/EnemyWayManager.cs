@@ -13,6 +13,7 @@ public class EnemyWayManager : MonoBehaviour
         public float SpawnTime;
         public float RestTime;
     }
+
     [SerializeField] List<Wave> waves;
     private int waveIndex = 0;
     private Wave currentWave;
@@ -59,7 +60,8 @@ public class EnemyWayManager : MonoBehaviour
 
     private void Spawn(GameObject enemy)
     {
-        
+        var spawnedEnemy = ObjectPooler.instance.ActivateObject(enemy.tag);
+        spawnedEnemy.SetActive(true);
     }
 
     public void setPathCells(List<Vector2Int> pathCells)

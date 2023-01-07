@@ -228,8 +228,9 @@ GameObject:
   - component: {fileID: 385075246}
   - component: {fileID: 385075245}
   - component: {fileID: 385075247}
+  - component: {fileID: 385075248}
   m_Layer: 0
-  m_Name: GridManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,8 +305,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7c673fcd8288a4cb541cf0022a53e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 919132149155446097, guid: 44454c88df610314c97f3f403dbb4b0a, type: 3}
+  waves:
+  - Amount: 5
+    Enemy: {fileID: 844510060275447268, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
+    SpawnTime: 3
+    RestTime: 5
   pathCells: []
+--- !u!114 &385075248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385075244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 249b87914b693e14fb11a3292587c72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - prefab: {fileID: 844510060275447268, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
+    size: 5
 --- !u!1 &954807892
 GameObject:
   m_ObjectHideFlags: 0
