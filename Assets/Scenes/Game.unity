@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - Amount: 5
-    Enemy: {fileID: 844510060275447268, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
+    Enemy: {fileID: 5091990156292907488, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
     SpawnTime: 3
     RestTime: 5
   pathCells: []
@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pools:
-  - prefab: {fileID: 844510060275447268, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
+  - prefab: {fileID: 5091990156292907488, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
     size: 5
 --- !u!1 &954807892
 GameObject:
