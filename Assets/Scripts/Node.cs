@@ -1,12 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
-public class Node
+
+public class Node : MonoBehaviour
 {
-    public Vector3 position;
-    public Node connectedTo;
-    public Node(Vector3 position, Node connectedTo)
+    // Start is called before the first frame update
+    void Start()
     {
-        this.position = position;
-        this.connectedTo = connectedTo;
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
