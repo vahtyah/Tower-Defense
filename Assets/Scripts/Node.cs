@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class Node : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Color hoverColor;
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseEnter()
     {
         
     }
