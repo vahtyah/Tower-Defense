@@ -283,7 +283,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &385075244
 GameObject:
@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 385075245}
   - component: {fileID: 385075247}
   - component: {fileID: 385075248}
+  - component: {fileID: 385075249}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -359,7 +360,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &385075247
 MonoBehaviour:
@@ -398,6 +399,19 @@ MonoBehaviour:
   pools:
   - prefab: {fileID: 5091990156292907488, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
     size: 5
+--- !u!114 &385075249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385075244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bccec9e296d084488a2828bf18f5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardTurretPrefab: {fileID: 2774647102165578786, guid: bba84c8d3424f89489945eac6f410675, type: 3}
 --- !u!1 &954807892
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,5 +494,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
