@@ -11,7 +11,6 @@ public class Shop : MonoBehaviour
     }
     public void PurchaseBallista()
     {
-        print("purchase ballista");
-        buildManager.SetTurretToBuild(buildManager.BallistTurretPrefab);
+        buildManager.SetTurretToBuild(buildManager.BallistaTurretPrefab);
     }
 }

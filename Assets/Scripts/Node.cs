@@ -18,7 +18,17 @@ public class Node : MonoBehaviour
             print("Can't build");
             return;
         }
-        GameObject turretToBulld = buildManager.GetTurretToBuldt();
-        turret = Instantiate(turretToBulld, new Vector3(transform.position.x, .2f, transform.position.z), transform.rotation);
+        GameObject turretToBuild = buildManager.GetTurretToBuldt();
+        Build(turretToBuild);
+    }
+
+    void Build(GameObject turretToBuild)
+    {
+        turret = ObjectPooler.instance.ActivateObject(turretToBuild.tag);
+        if (turret != null)
+        {
+            turret.SetActive(true);
+            turret.transform.position = new Vector3(transform.position.x, .2f, transform.position.z);
+        }
     }
 }

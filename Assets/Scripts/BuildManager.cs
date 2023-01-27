@@ -19,14 +19,12 @@ public class BuildManager : MonoBehaviour
     //[SerializeField] GameObject buildEffect;
     //[SerializeField] GameObject sellEffect;
 
-    [SerializeField] GameObject BallistaTurretPrefab;
-    public GameObject BallistTurretPrefab { get; }
+    public GameObject BallistaTurretPrefab;
 
     [SerializeField] GameObject turretToBuild;
     
     public void SetTurretToBuild(GameObject turret)
     {
-        print("Tuan");
         turretToBuild = turret;
     }
 
