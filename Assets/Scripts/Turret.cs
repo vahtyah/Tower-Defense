@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Turret : MonoBehaviour
 {
@@ -11,6 +12,13 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateTarget();
+        UpdateRotation();
+    }
+
+    void UpdateTarget()
+    {
+        target = null;
         float closestDistance = Mathf.Infinity;
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range, enemyLayer);
@@ -25,9 +33,12 @@ public class Turret : MonoBehaviour
         }
     }
 
-    void UpdateTarget()
+    void UpdateRotation()
     {
-        
+        if (target == null) return;
+        Vector3 direction = target.transform.position - transform.position;
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 2 * Time.deltaTime);
     }
 
     private void OnDrawGizmosSelected()
