@@ -5,18 +5,24 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     [SerializeField] float range = 1.5f;
-    [SerializeField] Transform target;
-    [SerializeField] GameObject[] enemies;
-    string enemyTag = "Enemy";
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject target;
+    [SerializeField] LayerMask enemyLayer;
 
     // Update is called once per frame
     void Update()
     {
-        enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        float closestDistance = Mathf.Infinity;
+
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, range, enemyLayer);
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            float distance = Vector3.Distance(transform.position, hitColliders[i].transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                target = hitColliders[i].gameObject;
+            }
+        }
     }
 
     void UpdateTarget()
@@ -29,5 +35,4 @@ public class Turret : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, range);
     }
-
 }

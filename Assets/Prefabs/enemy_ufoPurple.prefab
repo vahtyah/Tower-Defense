@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6749381133822083125}
   - component: {fileID: 7312362513623037628}
   - component: {fileID: 281194614295837299}
-  m_Layer: 0
+  - component: {fileID: 879133794}
+  m_Layer: 6
   m_Name: enemy_ufoPurple
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5091990156292907488}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -117,3 +118,17 @@ MonoBehaviour:
   money: 0
   speed: 5
   damage: 0
+--- !u!136 &879133794
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5091990156292907488}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.49999997
+  m_Height: 0.37119997
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.18559998, z: 0}
