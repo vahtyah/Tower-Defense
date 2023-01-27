@@ -516,6 +516,8 @@ MonoBehaviour:
   pools:
   - prefab: {fileID: 5091990156292907488, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
     size: 5
+  - prefab: {fileID: 3649374265919243521, guid: bba84c8d3424f89489945eac6f410675, type: 3}
+    size: 5
 --- !u!114 &385075249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bccec9e296d084488a2828bf18f5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallistaTurretPrefab: {fileID: 2774647102165578786, guid: bba84c8d3424f89489945eac6f410675, type: 3}
+  BallistaTurretPrefab: {fileID: 3649374265919243521, guid: bba84c8d3424f89489945eac6f410675, type: 3}
   turretToBuild: {fileID: 0}
 --- !u!1 &424699922
 GameObject:
