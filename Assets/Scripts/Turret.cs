@@ -10,6 +10,7 @@ public class Turret : MonoBehaviour
     [SerializeField] float range = 1.5f;
     [SerializeField] Collider target;
     [SerializeField] LayerMask enemyLayer;
+    [SerializeField] float speedRotation = 10f;
 
     [Header("Use bulletGO")]
     [SerializeField] GameObject bulletPrefab;
@@ -17,32 +18,35 @@ public class Turret : MonoBehaviour
     public float fireRate = 1f;
     public float fireCountdown = 0f;
 
+
+    bool targetLock = false;
+
     // Update is called once per frame
     void Update()
     {
         UpdateTarget();
+        if (target == null)
+            return;
         UpdateRotation();
-        //ClearTarget();
-
-        if (fireCountdown <= 0f && target)
+        if (fireCountdown <= 0f && targetLock)
         {
-            Shoot(bulletPrefab);
+            Shoot();
             fireCountdown = 1f / fireRate;
         }
 
         fireCountdown -= Time.deltaTime;
     }
 
-    void Shoot(GameObject bulletPrefab)
+    void Shoot()
     {
         var bulletGO = ObjectPooler.instance.ActivateObject(bulletPrefab.tag);
-        if(bulletGO != null)
+        if (bulletGO != null)
         {
             bulletGO.SetActive(true);
             bulletGO.transform.position = firePoint.position;
             bulletGO.transform.rotation = firePoint.rotation;
             Bullet bullet = bulletGO.GetComponent<Bullet>();
-            if(bullet!=null) { bullet.setTarget(target.transform); }
+            if (bullet != null) { bullet.setTarget(target.transform); }
         }
     }
 
@@ -51,8 +55,9 @@ public class Turret : MonoBehaviour
         float closestDistance = Mathf.Infinity;
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range, enemyLayer);
-        if(hitColliders.Contains(target)) { return; }
-        if(hitColliders.Length <= 0)
+        if (hitColliders.Contains(target)) { return; }
+        targetLock = false;
+        if (hitColliders.Length <= 0)
         {
             target = null;
             return;
@@ -75,7 +80,8 @@ public class Turret : MonoBehaviour
     {
         if (target == null) return;
         float distance = Vector3.Distance(transform.position, target.transform.position);
-        if (distance < range) {
+        if (distance < range)
+        {
             target = null;
             print("Tuan");
         }
@@ -83,10 +89,11 @@ public class Turret : MonoBehaviour
 
     void UpdateRotation()
     {
-        if (target == null) return;
         Vector3 direction = target.transform.position - transform.position;
+        float angle = Vector3.Angle(transform.forward, direction);
+        if (angle <= 5) targetLock = true;
         Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 2 * Time.deltaTime);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speedRotation * Time.deltaTime);
     }
 
     private void OnDrawGizmosSelected()

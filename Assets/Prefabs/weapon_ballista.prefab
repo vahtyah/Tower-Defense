@@ -215,11 +215,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30eecfa2fa2f5c4fa7da65de07f5121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 1.5
+  range: 4
   target: {fileID: 0}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  speedRotation: 9
   bulletPrefab: {fileID: 744936521392283688, guid: 9abc08c604776834886fa3ede86b2af9, type: 3}
   firePoint: {fileID: 4018001058213167873}
   fireRate: 1
@@ -332,7 +333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6351182140155724447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.689}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

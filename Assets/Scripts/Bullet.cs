@@ -7,7 +7,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float speed = 70f;
-    [SerializeField] int damage = 50;
     Transform target;
 
     public void setTarget(Transform target)
