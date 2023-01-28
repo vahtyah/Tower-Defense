@@ -8,6 +8,7 @@ TagManager:
   - Ufo Purple
   - Enemy
   - Ballista
+  - Arrow
   layers:
   - Default
   - TransparentFX

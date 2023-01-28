@@ -494,8 +494,8 @@ MonoBehaviour:
   waves:
   - Amount: 5
     Enemy: {fileID: 5091990156292907488, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
-    SpawnTime: 1
-    RestTime: 30
+    SpawnTime: 5
+    RestTime: 10
   - Amount: 10
     Enemy: {fileID: 5091990156292907488, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
     SpawnTime: 0.5
@@ -518,6 +518,8 @@ MonoBehaviour:
     size: 5
   - prefab: {fileID: 3649374265919243521, guid: bba84c8d3424f89489945eac6f410675, type: 3}
     size: 5
+  - prefab: {fileID: 744936521392283688, guid: 9abc08c604776834886fa3ede86b2af9, type: 3}
+    size: 10
 --- !u!114 &385075249
 MonoBehaviour:
   m_ObjectHideFlags: 0
