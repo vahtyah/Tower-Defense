@@ -25,29 +25,19 @@ public class Turret : MonoBehaviour
     void Update()
     {
         UpdateTarget();
-        if (target == null)
-            return;
+        if (target == null) return;
         UpdateRotation();
-        if (fireCountdown <= 0f && targetLock)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
-
-        fireCountdown -= Time.deltaTime;
+        Shoot();
     }
 
     void Shoot()
     {
-        var bulletGO = ObjectPooler.instance.ActivateObject(bulletPrefab.tag);
-        if (bulletGO != null)
+        if (fireCountdown <= 0f && targetLock)
         {
-            bulletGO.SetActive(true);
-            bulletGO.transform.position = firePoint.position;
-            bulletGO.transform.rotation = firePoint.rotation;
-            Bullet bullet = bulletGO.GetComponent<Bullet>();
-            if (bullet != null) { bullet.setTarget(target.transform); }
+            Bullet.Create(bulletPrefab,firePoint.position, target.transform);
+            fireCountdown = 1f / fireRate;
         }
+        fireCountdown -= Time.deltaTime;
     }
 
     void UpdateTarget()
