@@ -81,7 +81,7 @@ public class Turret : MonoBehaviour
     {
         Vector3 direction = target.transform.position - transform.position;
         float angle = Vector3.Angle(transform.forward, direction);
-        if (angle <= 5) targetLock = true;
+        if (angle <= 10) targetLock = true;
         Quaternion rotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speedRotation * Time.deltaTime);
     }

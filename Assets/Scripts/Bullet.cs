@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
         var bulletGO = ObjectPooler.instance.ActivateObject(bulletPrefab.tag);
         bulletGO.SetActive(true);
         bulletGO.transform.position = firePoint.position;
-        bulletGO.transform.rotation = firePoint.rotation;
+        //bulletGO.transform.rotation = firePoint.rotation;
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         bullet.Setup(target);
     }
