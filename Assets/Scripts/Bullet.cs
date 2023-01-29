@@ -6,12 +6,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public static void Create(GameObject bulletPrefab, Vector3 position, Transform target)
+    public static void Create(GameObject bulletPrefab, Transform firePoint, Transform target)
     {
         var bulletGO = ObjectPooler.instance.ActivateObject(bulletPrefab.tag);
         bulletGO.SetActive(true);
-        bulletGO.transform.position = position;
-        bulletGO.transform.rotation = Quaternion.identity;
+        bulletGO.transform.position = firePoint.position;
+        bulletGO.transform.rotation = firePoint.rotation;
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         bullet.Setup(target);
     }
@@ -41,14 +41,14 @@ public class Bullet : MonoBehaviour
             return;
         }
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        float angle = GetAngleFromVectorFloat(dir.normalized);
-        transform.eulerAngles = new Vector3(0, 0, angle);
+        float angle = GetAngleFromVectorFloat(dir);
+        transform.eulerAngles = new Vector3(0, angle,0);
     }
 
     private float GetAngleFromVectorFloat(Vector3 dir)
     {
         dir = dir.normalized;
-        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        float n = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg;
         if (n < 0) n += 360;
 
         return n;

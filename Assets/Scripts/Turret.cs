@@ -34,7 +34,7 @@ public class Turret : MonoBehaviour
     {
         if (fireCountdown <= 0f && targetLock)
         {
-            Bullet.Create(bulletPrefab,firePoint.position, target.transform);
+            Bullet.Create(bulletPrefab, firePoint, target.transform);
             fireCountdown = 1f / fireRate;
         }
         fireCountdown -= Time.deltaTime;
