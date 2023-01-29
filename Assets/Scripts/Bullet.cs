@@ -11,7 +11,6 @@ public class Bullet : MonoBehaviour
         var bulletGO = ObjectPooler.instance.ActivateObject(bulletPrefab.tag);
         bulletGO.SetActive(true);
         bulletGO.transform.position = firePoint.position;
-        //bulletGO.transform.rotation = firePoint.rotation;
         Bullet bullet = bulletGO.GetComponent<Bullet>();
         bullet.Setup(target);
     }
@@ -41,8 +40,9 @@ public class Bullet : MonoBehaviour
             return;
         }
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        float angle = GetAngleFromVectorFloat(dir);
-        transform.eulerAngles = new Vector3(0, angle,0);
+        //float angle = GetAngleFromVectorFloat(dir);
+        //transform.eulerAngles = new Vector3(0, angle,0);
+        transform.LookAt(target.position);
     }
 
     private float GetAngleFromVectorFloat(Vector3 dir)

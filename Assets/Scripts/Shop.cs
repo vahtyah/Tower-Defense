@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    [SerializeField] TurretBlueprint ballistaTurret;
+
     BuildManager buildManager;
     private void Start()
     {
         buildManager = BuildManager.instance;
     }
-    public void PurchaseBallista()
+    public void SelectBallista()
     {
-        buildManager.SetTurretToBuild(buildManager.BallistaTurretPrefab);
+        buildManager.SelectTurretToBuild(ballistaTurret);
     }
 }

@@ -308,6 +308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e30100c84bc8c4d8b63433e34352cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballistaTurret:
+    turretPrefab: {fileID: 3649374265919243521, guid: bba84c8d3424f89489945eac6f410675, type: 3}
+    cost: 100
 --- !u!1 &317052402
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,8 +535,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3bccec9e296d084488a2828bf18f5ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BallistaTurretPrefab: {fileID: 3649374265919243521, guid: bba84c8d3424f89489945eac6f410675, type: 3}
-  turretToBuild: {fileID: 0}
+  turretToBuild:
+    turretPrefab: {fileID: 0}
+    cost: 100
 --- !u!1 &424699922
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +650,7 @@ GameObject:
   - component: {fileID: 954807895}
   - component: {fileID: 954807894}
   - component: {fileID: 954807893}
+  - component: {fileID: 954807896}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -719,6 +724,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &954807896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954807892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21322f1bab7dc35428a790bb8ba93c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panSpeed: 3
+  panBorderThickness: 10
+  scrollSpeed: 0.3
+  minY: 10
+  maxY: 80
 --- !u!224 &1033007181 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2017711823889826517, guid: e420bdc63c443f84c8f8dca92c0abdee, type: 3}
@@ -823,5 +845,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 280565011}
+    - target: {fileID: 2017711823889826519, guid: e420bdc63c443f84c8f8dca92c0abdee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectBallista
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e420bdc63c443f84c8f8dca92c0abdee, type: 3}

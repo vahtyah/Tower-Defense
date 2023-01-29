@@ -19,17 +19,19 @@ public class BuildManager : MonoBehaviour
     //[SerializeField] GameObject buildEffect;
     //[SerializeField] GameObject sellEffect;
 
-    public GameObject BallistaTurretPrefab;
 
-    [SerializeField] GameObject turretToBuild;
+    [SerializeField]TurretBlueprint turretToBuild;
     
-    public void SetTurretToBuild(GameObject turret)
+    public void SelectTurretToBuild(TurretBlueprint turret)
     {
         turretToBuild = turret;
     }
 
-    public GameObject GetTurretToBuldt()
+    public void BuildTurretOn(Node node)
     {
-        return turretToBuild;
+        var turret = Turret.Create(turretToBuild.TurretPrefab, node.transform);
+        node.turret = turret;
     }
+
+    public bool CanBuild { get { return turretToBuild!= null; } }
 }

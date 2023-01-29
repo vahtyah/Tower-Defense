@@ -6,6 +6,14 @@ using UnityEngine.UIElements;
 
 public class Turret : MonoBehaviour
 {
+    public static GameObject Create(GameObject turretPrefab, Transform transform)
+    {
+        var turret = ObjectPooler.instance.ActivateObject(turretPrefab.tag);
+        turret.SetActive(true);
+        turret.transform.position = transform.position;
+        return turret;
+    }
+
     [Header("General")]
     [SerializeField] float range = 1.5f;
     [SerializeField] Collider target;
