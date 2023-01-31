@@ -54,7 +54,7 @@ MonoBehaviour:
   speedRotation: 15
   bulletPrefab: {fileID: 744936521392283688, guid: 9abc08c604776834886fa3ede86b2af9, type: 3}
   firePoint: {fileID: 1836505233242050042}
-  fireRate: 0.75
+  fireRate: 1.25
   fireCountdown: 0
 --- !u!1001 &3010697777723729178
 PrefabInstance:
