@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4174553334623100859
 Transform:
   m_ObjectHideFlags: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30eecfa2fa2f5c4fa7da65de07f5121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 4
+  range: 1.5
   target: {fileID: 0}
   enemyLayer:
     serializedVersion: 2

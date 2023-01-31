@@ -6,9 +6,12 @@ using UnityEngine;
 [System.Serializable]
 public class TurretBlueprint 
 {
-    [SerializeField] GameObject turretPrefab;
-    [SerializeField] int cost;
+    public TurretInfor[] turretBlueprint;
+    [System.Serializable]
+    public class TurretInfor
+    {
+        public GameObject turretPrefab;
+        public int cost;
+    }
 
-    public GameObject TurretPrefab { get { return turretPrefab; } }
-    public int Cost { get { return cost; } }
 }

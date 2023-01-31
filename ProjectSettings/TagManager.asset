@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Ballista
   - Arrow
+  - Ballista_1
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     [SerializeField] float minY = 10f;
     [SerializeField] float maxY = 80f;
 
-    private void Update()
+    private void Updatesss()
     {
         if (Input.GetKey("w") || Input.mousePosition.y >= Screen.height - panBorderThickness)
         {

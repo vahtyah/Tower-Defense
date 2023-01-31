@@ -16,7 +16,6 @@ public class Turret : MonoBehaviour
 
     [Header("General")]
     [SerializeField] float range = 1.5f;
-    public float Range { get { return range; } }
     [SerializeField] Collider target;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] float speedRotation = 10f;
@@ -29,6 +28,9 @@ public class Turret : MonoBehaviour
 
 
     bool targetLock = false;
+
+    public float Range { get { return range; } }
+
 
     // Update is called once per frame
     void Update()

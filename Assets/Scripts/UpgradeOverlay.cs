@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class UpgradeOverlay : MonoBehaviour
 {
-    private Turret turret;
+    Turret turret;
+    Node node;
 
-    public void Show(Turret turret)
+    public void Show(Node node)
     {
-        this.turret = turret;
-        gameObject.SetActive(turret);
+        this.turret = node.Turret;
+        this.node = node;   
+        gameObject.SetActive(true);
         transform.position = turret.transform.position;
         RefreshRangeVisual();
     }
@@ -25,8 +27,8 @@ public class UpgradeOverlay : MonoBehaviour
         transform.Find("Range").localScale = turret.Range * Vector3.one * 2f;
     }
 
-    public void updatecc()
+    public void Upgrade()
     {
-        print("update");
+        node.UpgradeTurret();
     }
 }

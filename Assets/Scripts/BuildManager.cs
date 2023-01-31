@@ -33,7 +33,7 @@ public class BuildManager : MonoBehaviour
         }
         selectedNode = node;
         turretToBuild = null;
-        upgradeOverlay.Show(node.turret);
+        upgradeOverlay.Show(node);
     }
 
     public void DeselectNode()
@@ -47,10 +47,9 @@ public class BuildManager : MonoBehaviour
         turretToBuild = turret;
     }
 
-    public void BuildTurretOn(Node node)
+    public TurretBlueprint GetTurretToBuild()
     {
-        var turret = Turret.Create(turretToBuild.TurretPrefab, node.transform).GetComponent<Turret>();
-        node.turret = turret;
+        return turretToBuild;
     }
 
     public bool CanBuild { get {return turretToBuild != null; } }
