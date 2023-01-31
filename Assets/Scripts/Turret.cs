@@ -10,7 +10,7 @@ public class Turret : MonoBehaviour
     {
         var turret = ObjectPooler.instance.ActivateObject(turretPrefab.tag);
         turret.SetActive(true);
-        turret.transform.position = transform.position;
+        turret.transform.position = transform.position + new Vector3(0f,.2f,0f);
         return turret;
     }
 

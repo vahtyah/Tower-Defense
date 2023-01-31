@@ -20,8 +20,28 @@ public class BuildManager : MonoBehaviour
     //[SerializeField] GameObject sellEffect;
 
 
-    [SerializeField]TurretBlueprint turretToBuild;
+    [SerializeField] UpgradeOverlay upgradeOverlay;
+    TurretBlueprint turretToBuild;
+    Node selectedNode;
     
+    public void SelectNode(Node node)
+    {
+        if(selectedNode == node)
+        {
+            DeselectNode();
+            return;
+        }
+        selectedNode = node;
+        turretToBuild = null;
+        upgradeOverlay.Show(node.turret);
+    }
+
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        upgradeOverlay.Hide();
+    }
+
     public void SelectTurretToBuild(TurretBlueprint turret)
     {
         turretToBuild = turret;
@@ -29,9 +49,9 @@ public class BuildManager : MonoBehaviour
 
     public void BuildTurretOn(Node node)
     {
-        var turret = Turret.Create(turretToBuild.TurretPrefab, node.transform);
+        var turret = Turret.Create(turretToBuild.TurretPrefab, node.transform).GetComponent<Turret>();
         node.turret = turret;
     }
 
-    public bool CanBuild { get { return turretToBuild!= null; } }
+    public bool CanBuild { get {return turretToBuild != null; } }
 }
