@@ -309,8 +309,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballistaTurret:
-    turretPrefab: {fileID: 3649374265919243521, guid: bba84c8d3424f89489945eac6f410675, type: 3}
-    cost: 100
+    turretBlueprint:
+    - turretPrefab: {fileID: 3649374265919243521, guid: bba84c8d3424f89489945eac6f410675, type: 3}
+      cost: 0
+    - turretPrefab: {fileID: 5164441493705104119, guid: b8203ccdec5ef064ba2a6f05bcf76758, type: 3}
+      cost: 0
 --- !u!1 &317052402
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,7 +863,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1636245958}
         m_TargetAssemblyTypeName: UpgradeOverlay, Assembly-CSharp
-        m_MethodName: updatecc
+        m_MethodName: Upgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
