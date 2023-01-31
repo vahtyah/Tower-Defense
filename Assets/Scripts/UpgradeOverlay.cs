@@ -12,11 +12,17 @@ public class UpgradeOverlay : MonoBehaviour
         this.turret = turret;
         gameObject.SetActive(turret);
         transform.position = turret.transform.position;
+        RefreshRangeVisual();
     }
 
     public void Hide()
     {
         gameObject.SetActive(false);
+    }
+
+    private void RefreshRangeVisual()
+    {
+        transform.Find("Range").localScale = turret.Range * Vector3.one * 2f;
     }
 
     public void updatecc()
