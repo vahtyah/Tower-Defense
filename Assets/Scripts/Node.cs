@@ -49,6 +49,7 @@ public class Node : MonoBehaviour
         }
         //money
         //Destroy(turret.gameObject); Deactive
+        Turret.Destroy(turret.gameObject);
         turret = Turret.Create(turretOnNode.turretBlueprint[++numberOfUpdate].turretPrefab, transform).GetComponent<Turret>();
     }
 }

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
-  target: {fileID: 0}
+  partToRotate: {fileID: 4112315504484094674}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64

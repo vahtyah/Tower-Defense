@@ -14,11 +14,18 @@ public class Turret : MonoBehaviour
         return turret;
     }
 
+    public static void Destroy(GameObject turretPrefab)
+    {
+        ObjectPooler.instance.DeactivateObject(turretPrefab);
+    }
+
     [Header("General")]
     [SerializeField] float range = 1.5f;
-    [SerializeField] Collider target;
+    [SerializeField] Transform partToRotate;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] float speedRotation = 10f;
+    Collider target;
+    
 
     [Header("Use bulletGO")]
     [SerializeField] GameObject bulletPrefab;
@@ -91,15 +98,20 @@ public class Turret : MonoBehaviour
     void UpdateRotation()
     {
         Vector3 direction = target.transform.position - transform.position;
-        float angle = Vector3.Angle(transform.forward, direction);
+        float angle = Vector3.Angle(partToRotate.forward, direction);
         if (angle <= 10) targetLock = true;
         Quaternion rotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speedRotation * Time.deltaTime);
+        partToRotate.rotation = Quaternion.Slerp(partToRotate.rotation, rotation, speedRotation * Time.deltaTime);
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public Transform GetPartToRotate()
+    {
+        return partToRotate;
     }
 }
