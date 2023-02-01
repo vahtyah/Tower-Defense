@@ -24,14 +24,15 @@ public class Turret : MonoBehaviour
     [SerializeField] Transform partToRotate;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] float speedRotation = 10f;
-    Collider target;
+    [HideInInspector]
+    public Collider target;
     
 
     [Header("Use bulletGO")]
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
-    public float fireRate = 1f;
-    public float fireCountdown = 0f;
+    [SerializeField] float fireRate = 1f;
+    [SerializeField] float fireCountdown = 0f;
 
 
     bool targetLock = false;

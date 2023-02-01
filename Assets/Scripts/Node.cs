@@ -48,8 +48,11 @@ public class Node : MonoBehaviour
             return;
         }
         //money
-        //Destroy(turret.gameObject); Deactive
+        Quaternion quaternion = turret.GetPartToRotate().rotation;
+        Collider target = turret.target;
         Turret.Destroy(turret.gameObject);
         turret = Turret.Create(turretOnNode.turretBlueprint[++numberOfUpdate].turretPrefab, transform).GetComponent<Turret>();
+        turret.target = target;
+        turret.gameObject.transform.rotation = quaternion;
     }
 }

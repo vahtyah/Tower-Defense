@@ -30,5 +30,6 @@ public class UpgradeOverlay : MonoBehaviour
     public void Upgrade()
     {
         node.UpgradeTurret();
+        Show(node);
     }
 }
