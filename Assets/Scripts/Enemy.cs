@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] int money;
     [SerializeField] float speed = 2;
     [SerializeField] float damage;
+    public Image healthBar;
 
     HealthSystem healthSystem;
 
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour
         healthSystem = new HealthSystem(health);
         healthSystem.OnHealthChanged += (object sender, EventArgs eventArgs) =>
         {
-            print(healthSystem.GetHealth());
+            healthBar.fillAmount = healthSystem.GetHealthPrecent();
         };
     }
 
