@@ -15,19 +15,26 @@ public class Bullet : MonoBehaviour
         bullet.Setup(target);
     }
 
+    public static void Destroy(GameObject bulletPrefab)
+    {
+        ObjectPooler.instance.DeactivateObject(bulletPrefab);
+    }
+
     [SerializeField] float speed = 70f;
     Transform target;
+    Enemy enemy;
 
     private void Setup(Transform target)
     {
         this.target = target;
+        enemy = target.GetComponent<Enemy>();
     }
 
     private void Update()
     {
         if (target == null)
         {
-            ObjectPooler.instance.DeactivateObject(gameObject);
+            Bullet.Destroy(gameObject);
             return;
         }
 
@@ -47,6 +54,7 @@ public class Bullet : MonoBehaviour
 
     private void HitTarget()
     {
-        ObjectPooler.instance.DeactivateObject(gameObject);
+        Bullet.Destroy(gameObject);
+        enemy.Damage(10);
     }
 }

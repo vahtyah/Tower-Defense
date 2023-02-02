@@ -30,6 +30,11 @@ public class EnemyWayManager : MonoBehaviour
 
     private void Update()
     {
+        Spawn();
+    }
+
+    private void Spawn()
+    {
         if (waveIndex >= waves.Count) return;
         if (currentWave.RestTime < 0)
         {
@@ -48,20 +53,13 @@ public class EnemyWayManager : MonoBehaviour
 
         if (spawnTime < 0)
         {
-            Spawn(currentWave.Enemy);
-
+            Enemy.Create(currentWave.Enemy);
             spawnTime = currentWave.SpawnTime;
             currentWave.Amount--;
             return;
         }
 
         spawnTime -= Time.deltaTime;
-    }
-
-    private void Spawn(GameObject enemy)
-    {
-        var spawnedEnemy = ObjectPooler.instance.ActivateObject(enemy.tag);
-        spawnedEnemy.SetActive(true);
     }
 
     public void setPathCells(List<Vector2Int> pathCells)

@@ -1,24 +1,52 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int health;
+    public static GameObject Create(GameObject EnemyPrefab)
+    {
+        var enemy = ObjectPooler.instance.ActivateObject(EnemyPrefab.tag);
+        enemy.SetActive(true);
+        return enemy;
+    }
+
+    public static void Destroy(GameObject EnemyPrefab)
+    {
+        ObjectPooler.instance.DeactivateObject(EnemyPrefab);
+    }
+
+    [SerializeField] int health = 100;
     [SerializeField] int money;
     [SerializeField] float speed = 2;
     [SerializeField] float damage;
 
-    //public Enemy(int health, int money, float speed,float damage)
-    //{
-    //    this.health = health;
-    //    this.money = money;
-    //    this.speed = speed;
-    //    this.damage = damage;
-    //}
+    HealthSystem healthSystem;
 
-    public int Health => health;
+    private void Start()
+    {
+        healthSystem = new HealthSystem(health);
+        healthSystem.OnHealthChanged += (object sender, EventArgs eventArgs) =>
+        {
+            print(healthSystem.GetHealth());
+        };
+    }
+
+    public void Damage(int damageAmount)
+    {
+        healthSystem.Damage(damageAmount);
+        if (IsDead())
+        {
+            Enemy.Destroy(gameObject);
+        }
+    }
+
+    public bool IsDead()
+    {
+        return healthSystem.IsDead();
+    }
+    
     public int Money => money;
     public float Speed => speed;
-    public float Damage => damage;
 }
