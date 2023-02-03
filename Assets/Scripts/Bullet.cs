@@ -47,8 +47,6 @@ public class Bullet : MonoBehaviour
             return;
         }
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
-        //float angle = GetAngleFromVectorFloat(dir);
-        //transform.eulerAngles = new Vector3(0, angle,0);
         transform.LookAt(target.position);
     }
 
