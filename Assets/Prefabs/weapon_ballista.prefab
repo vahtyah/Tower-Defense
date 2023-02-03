@@ -221,10 +221,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speedRotation: 9
+  target: {fileID: 0}
   bulletPrefab: {fileID: 744936521392283688, guid: 9abc08c604776834886fa3ede86b2af9, type: 3}
   firePoint: {fileID: 4018001058213167873}
   fireRate: 1
   fireCountdown: 0
+  costForBuild: 40
+  turretPrefabUpgrade: {fileID: 4814224495244933715, guid: b8203ccdec5ef064ba2a6f05bcf76758, type: 3}
+  costRefuns: 0
 --- !u!1 &5530300617713293415
 GameObject:
   m_ObjectHideFlags: 0

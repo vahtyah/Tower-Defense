@@ -21,7 +21,7 @@ public class BuildManager : MonoBehaviour
 
 
     [SerializeField] UpgradeOverlay upgradeOverlay;
-    TurretBlueprint turretToBuild;
+    Turret turretToBuild;
     Node selectedNode;
     
     public void SelectNode(Node node)
@@ -42,15 +42,19 @@ public class BuildManager : MonoBehaviour
         upgradeOverlay.Hide();
     }
 
-    public void SelectTurretToBuild(TurretBlueprint turret)
+    public void SelectTurretToBuild(Turret turret)
     {
         turretToBuild = turret;
     }
 
-    public TurretBlueprint GetTurretToBuild()
+    public Turret GetTurretToBuild()
     {
         return turretToBuild;
     }
 
-    public bool CanBuild { get {return turretToBuild != null; } }
+    public bool CanBuild { get { return turretToBuild != null; } }
+    public bool HasMoney(int money)
+    {
+        return Player.Money >= money;
+    }
 }

@@ -34,11 +34,19 @@ public class Turret : MonoBehaviour
     [SerializeField] float fireRate = 1f;
     [SerializeField] float fireCountdown = 0f;
 
+    [Header("Upgrade")]
+    [SerializeField] int costForBuild;
+    [SerializeField] Turret turretPrefabUpgrade;
+    [SerializeField] int costRefuns;
 
     bool targetLock = false;
 
     public float Range { get { return range; } }
 
+    private void Awake()
+    {
+        costRefuns = costForBuild * 50 / 100;
+    }
 
     // Update is called once per frame
     void Update()
@@ -114,5 +122,20 @@ public class Turret : MonoBehaviour
     public Transform GetPartToRotate()
     {
         return partToRotate;
+    }
+
+    public Turret GetTurretPrefabUpgrade()
+    {
+        return turretPrefabUpgrade;
+    }
+
+    public int GetCostForBuild()
+    {
+        return costForBuild;
+    }
+
+    public int GetCostRefuns()
+    {
+        return costRefuns;
     }
 }

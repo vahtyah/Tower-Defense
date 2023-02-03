@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] TurretBlueprint ballistaTurret;
+    [SerializeField] Turret ballistaTurret;
 
     BuildManager buildManager;
     private void Start()

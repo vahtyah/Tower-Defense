@@ -10,8 +10,6 @@ public class Node : MonoBehaviour
     BuildManager buildManager;
 
     Turret turret;
-    TurretBlueprint turretOnNode;
-    int numberOfUpdate = 0;
 
     public Turret Turret { get { return turret;} }
     private void Start()
@@ -22,37 +20,59 @@ public class Node : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        if (turretOnNode != null)
+        if (turret != null)
         {
             buildManager.SelectNode(this);
             return;
         }
         if (!buildManager.CanBuild)
         {
+            print("You have not select turret!");
             return;
         }
-        BuildTurret(buildManager.GetTurretToBuild());
+        int moneyToBuild = buildManager.GetTurretToBuild().GetCostForBuild();
+        if(!buildManager.HasMoney(moneyToBuild))
+        {
+            print("Do not have enough money left!");
+            return;
+        }
+        Player.SubMoney(moneyToBuild);
+        BuildTurret(buildManager.GetTurretToBuild().gameObject);
     }
 
-    void BuildTurret(TurretBlueprint turretBlueprint)
+    void BuildTurret(GameObject turretBlueprint)
     {
-        turret = Turret.Create(turretBlueprint.turretBlueprint[0].turretPrefab, transform).GetComponent<Turret>();
-        turretOnNode = turretBlueprint;
+        turret = Turret.Create(turretBlueprint, transform).GetComponent<Turret>();
     }
 
     public void UpgradeTurret()
     {
-        if(numberOfUpdate + 1 >= turretOnNode.turretBlueprint.Length)
+        if (turret.GetTurretPrefabUpgrade() == null)
         {
-            print("Update cc");
+            print("Upgraded to the highest version");
             return;
         }
-        //money
+        int moneyToUpgrade = turret.GetTurretPrefabUpgrade().GetCostForBuild();
+        if (!buildManager.HasMoney(moneyToUpgrade))
+        {
+            print("Do not have enough money left!");
+            return;
+        }
+        Player.SubMoney(moneyToUpgrade);
         Quaternion quaternion = turret.GetPartToRotate().rotation;
         Collider target = turret.target;
         Turret.Destroy(turret.gameObject);
-        turret = Turret.Create(turretOnNode.turretBlueprint[++numberOfUpdate].turretPrefab, transform).GetComponent<Turret>();
+        turret = Turret.Create(turret.GetTurretPrefabUpgrade().gameObject, transform).GetComponent<Turret>();
         turret.target = target;
         turret.gameObject.transform.rotation = quaternion;
+    }
+
+    public void SellTurret()
+    {
+        int moneyFromSellTurret = turret.GetCostRefuns();
+        Player.AddMoney(moneyFromSellTurret);
+        buildManager.DeselectNode();
+        Turret.Destroy(turret.gameObject);
+        turret = null;
     }
 }
