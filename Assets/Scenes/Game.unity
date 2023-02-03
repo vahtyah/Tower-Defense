@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e30100c84bc8c4d8b63433e34352cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballistaTurret: {fileID: 3649374265919243521, guid: bba84c8d3424f89489945eac6f410675, type: 3}
+  ballistaTurret: {fileID: -5083098781645861021, guid: bba84c8d3424f89489945eac6f410675, type: 3}
 --- !u!1 &317052402
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 385075247}
   - component: {fileID: 385075248}
   - component: {fileID: 385075249}
+  - component: {fileID: 385075250}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -534,6 +535,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeOverlay: {fileID: 1636245958}
+--- !u!114 &385075250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385075244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc71bf10fa0fa74e8085a582e7f0d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 1000
 --- !u!1 &424699922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1506,6 +1520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   costForUpgrade: {fileID: 1966296474}
+  costForSell: {fileID: 1707570182}
 --- !u!114 &1636245959
 MonoBehaviour:
   m_ObjectHideFlags: 0
