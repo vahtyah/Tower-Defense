@@ -55,6 +55,6 @@ public class BuildManager : MonoBehaviour
     public bool CanBuild { get { return turretToBuild != null; } }
     public bool HasMoney(int money)
     {
-        return Player.Money >= money;
+        return Player.instance.Money >= money;
     }
 }

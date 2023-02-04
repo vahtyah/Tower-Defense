@@ -6,12 +6,13 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     BuildManager buildManager;
-
+    Player player;
     Turret turret;
 
     public Turret Turret { get { return turret;} }
     private void Start()
     {
+        player = Player.instance;
         buildManager = BuildManager.instance;
     }
     private void OnMouseDown()
@@ -34,7 +35,7 @@ public class Node : MonoBehaviour
             print("Do not have enough money left!");
             return;
         }
-        Player.SubMoney(moneyToBuild);
+        player.ChangeMoney(-moneyToBuild);
         BuildTurret(buildManager.GetTurretToBuild().gameObject);
     }
 
@@ -56,7 +57,7 @@ public class Node : MonoBehaviour
             print("Do not have enough money left!");
             return;
         }
-        Player.SubMoney(moneyToUpgrade);
+        player.ChangeMoney(-moneyToUpgrade);
         Quaternion quaternion = turret.GetPartToRotate().rotation;
         Collider target = turret.target;
         Turret.Destroy(turret.gameObject);
@@ -68,7 +69,7 @@ public class Node : MonoBehaviour
     public void SellTurret()
     {
         int moneyFromSellTurret = turret.GetCostRefuns();
-        Player.AddMoney(moneyFromSellTurret);
+        player.ChangeMoney(moneyFromSellTurret);
         buildManager.DeselectNode();
         Turret.Destroy(turret.gameObject);
         turret = null;
