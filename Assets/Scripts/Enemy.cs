@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
         healthSystem.Damage(damageAmount);
         if (IsDead())
         {
+            Player.instance.ChangeMoney(money);
             Enemy.Destroy(gameObject);
         }
     }
