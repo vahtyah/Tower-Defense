@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class UILevelSelectForm : MonoBehaviour
 {
-    public MouseScroll mouseScroll;
-
-    private void Start()
+    [SerializeField] MouseScroll mouseScroll;
+    [SerializeField] GameObject UIMenu;
+    private void OnEnable()
     {
         mouseScroll.Init();
+    }
+
+    public void OnBackButtonClick()
+    {
+        gameObject.SetActive(false);
+        UIMenu.SetActive(true);
     }
 }

@@ -4303,6 +4303,7 @@ GameObject:
   - component: {fileID: 976936203}
   - component: {fileID: 976936202}
   - component: {fileID: 976936201}
+  - component: {fileID: 976936204}
   m_Layer: 0
   m_Name: UIMenu
   m_TagString: Untagged
@@ -4394,6 +4395,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &976936204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976936199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4957ef0c5acf30b4db897e364af71d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UILevelSelect: {fileID: 1320077804}
 --- !u!1 &983813233
 GameObject:
   m_ObjectHideFlags: 0
@@ -6273,6 +6287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseScroll: {fileID: 694507392}
+  UIMenu: {fileID: 976936199}
 --- !u!1001 &1329194850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6410,7 +6425,7 @@ GameObject:
   - component: {fileID: 1332202444}
   - component: {fileID: 1332202443}
   m_Layer: 0
-  m_Name: Button
+  m_Name: LevelSelectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6480,7 +6495,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1332202444}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 976936204}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: OnLevelSelectButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1332202444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6664,7 +6691,7 @@ GameObject:
   - component: {fileID: 1362306848}
   - component: {fileID: 1362306847}
   m_Layer: 0
-  m_Name: Button (2)
+  m_Name: QuitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6734,7 +6761,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1362306848}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 976936204}
+        m_TargetAssemblyTypeName: UIMenu, Assembly-CSharp
+        m_MethodName: OnQuitButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1362306848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8402,7 +8441,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1766679061}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1320077808}
+        m_TargetAssemblyTypeName: UILevelSelectForm, Assembly-CSharp
+        m_MethodName: OnBackButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1766679061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9534,7 +9585,7 @@ GameObject:
   - component: {fileID: 1973282288}
   - component: {fileID: 1973282287}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: OptionsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
