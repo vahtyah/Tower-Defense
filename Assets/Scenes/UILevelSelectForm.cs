@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UILevelSelectForm : MonoBehaviour
 {
@@ -15,5 +16,10 @@ public class UILevelSelectForm : MonoBehaviour
     {
         gameObject.SetActive(false);
         UIMenu.SetActive(true);
+    }
+
+    public void OnLevel1Click()
+    {
+        SceneManager.LoadScene(1);
     }
 }
