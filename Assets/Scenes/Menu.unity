@@ -2991,9 +2991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81252294afd18a44aaa2752f7844542f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clampScroll: 1
-  scrollXBuffer: 0
-  scrollYBuffer: 0
+  speedRotation: 2
 --- !u!1001 &583226724
 PrefabInstance:
   m_ObjectHideFlags: 0
