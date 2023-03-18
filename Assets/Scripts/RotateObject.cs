@@ -6,24 +6,12 @@ using UnityInput = UnityEngine.Input;
 
 public class RotateObject : MonoBehaviour
 {
-    //[SerializeField] float rotationSpeed = 50;
-
-    //[System.Obsolete]
-    //private void FixedUpdate()
-    //{
-    //    Vector3 mousePosition = UnityInput.mousePosition;
-    //    float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.deltaTime;
-    //    transform.RotateAround(Vector3.down,x);
-    //}
-
-    public bool clampScroll = true;
-    public float scrollXBuffer;
-
-    public float scrollYBuffer;
+    public float speedRotation = 2f;
     private void Update()
     {
         Vector3 mousePosition = Input.mousePosition;
-        float angle = (mousePosition.x / Screen.width) * 360;
-        transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
+        if (mousePosition.x > Screen.width/2)
+            transform.Rotate(new Vector3(0, speedRotation * Time.deltaTime, 0));
+        else transform.Rotate(new Vector3(0, -speedRotation * Time.deltaTime, 0));
     }
 }
