@@ -28,6 +28,7 @@ public class PathFollower : MonoBehaviour
             {
                 enemyRunCompleted = true;
                 ObjectPooler.instance.DeactivateObject(gameObject);
+                Player.instance.DeIncreaseLives();
             }
         }
     }

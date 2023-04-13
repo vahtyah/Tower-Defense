@@ -17,9 +17,11 @@ public class Player : MonoBehaviour
         }
     }
     public event EventHandler OnChangeMoney;
+    public event EventHandler OnChangeLives;
 
     public int Money;
     [SerializeField] int startMoney;
+    [SerializeField] int lives = 3;
 
     private void Awake()
     {
@@ -38,4 +40,18 @@ public class Player : MonoBehaviour
     {
         return Money;
     }
+
+    public int GetLives()
+    {
+        return lives;
+    }
+
+    public void DeIncreaseLives()
+    {
+        if (lives < 0) return;
+        OnChangeLives?.Invoke(this, EventArgs.Empty);
+        lives--;
+    }
+
+    public bool IsLive() => lives > 0;
 }

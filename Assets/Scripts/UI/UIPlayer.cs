@@ -3,23 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIPlayer : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI cost;
+    [SerializeField] TextMeshProUGUI costText;
+    [SerializeField] TextMeshProUGUI livesText;
+    [SerializeField] Button pauseButton;
+    [SerializeField] GameObject gamePausePanel;
     Player player;
     private void Start()
     {
+        pauseButton.onClick.AddListener(PauseButtonClick);
         player = Player.instance;
         SetCostText();
+        SetLivesText();
         player.OnChangeMoney += (object sender, EventArgs eventArgs) =>
         {
             SetCostText();
+        };
+        player.OnChangeLives += (object sender, EventArgs eventArgs) =>
+        {
+            SetLivesText();
         };
     }
 
     void SetCostText()
     {
-        cost.text = "$" + player.GetMoney().ToString();
+        costText.text = "$" + player.GetMoney().ToString();
+    }
+
+    void SetLivesText()
+    {
+        livesText.text = player.GetLives().ToString() + " Lives";
+    }
+
+    void PauseButtonClick()
+    {
+        gamePausePanel.SetActive(true);
     }
 }
