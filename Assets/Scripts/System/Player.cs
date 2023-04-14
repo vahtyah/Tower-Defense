@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     public void ChangeMoney(int money)
     {
         Money += money;
-        OnChangeMoney?.Invoke(this, EventArgs.Empty);
+        OnChangeMoney?.Invoke(Money, EventArgs.Empty);
         print("Money's Player: " + Money);
     }
 
@@ -48,10 +48,10 @@ public class Player : MonoBehaviour
 
     public void DeIncreaseLives()
     {
-        if (lives < 0) return;
-        OnChangeLives?.Invoke(this, EventArgs.Empty);
+        if (lives <= 0)
+            return;
         lives--;
+        OnChangeLives?.Invoke(lives, EventArgs.Empty);
+        print("Lives's Player: " + lives);
     }
-
-    public bool IsLive() => lives > 0;
 }

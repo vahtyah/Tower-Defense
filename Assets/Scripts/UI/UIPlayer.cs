@@ -35,11 +35,12 @@ public class UIPlayer : MonoBehaviour
 
     void SetLivesText()
     {
-        livesText.text = player.GetLives().ToString() + " Lives";
+        livesText.text = player.GetLives().ToString() + " Live";
     }
 
     void PauseButtonClick()
     {
         gamePausePanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }

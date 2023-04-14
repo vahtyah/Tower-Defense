@@ -6,25 +6,21 @@ using UnityEngine.UI;
 
 public class UIGamePause : MonoBehaviour
 {
-    [SerializeField] Button closeButton;
-    [SerializeField] Button pauseButton;
-
-    private void Start()
-    {
-        closeButton.onClick.AddListener(CloseButtonClick);
-    }
     public void MainMenuButtonClick()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
 
     public void RestartButtonClick()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
-    
+
     public void CloseButtonClick()
     {
         gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }

@@ -1211,6 +1211,7 @@ GameObject:
   m_Component:
   - component: {fileID: 505136625}
   - component: {fileID: 505136627}
+  - component: {fileID: 505136628}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -1267,6 +1268,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &505136628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505136624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e985673a436cba440bba628942dbbbb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &526087043
 GameObject:
   m_ObjectHideFlags: 0
@@ -3051,8 +3064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352070f8108a52a4badc75fe25ed0560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeButton: {fileID: 1967596562}
-  pauseButton: {fileID: 1530674769}
 --- !u!1 &1636245957
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,7 +3943,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1967596563}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1572927214}
+        m_TargetAssemblyTypeName: UIGamePause, Assembly-CSharp
+        m_MethodName: CloseButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1967596563
 MonoBehaviour:
   m_ObjectHideFlags: 0
