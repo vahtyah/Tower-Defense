@@ -11,13 +11,20 @@ public class UIPlayer : MonoBehaviour
     [SerializeField] TextMeshProUGUI livesText;
     [SerializeField] Button pauseButton;
     [SerializeField] GameObject gamePausePanel;
+    [SerializeField] UIGameOver UIGameOver;
     Player player;
     private void Start()
     {
-        pauseButton.onClick.AddListener(PauseButtonClick);
         player = Player.instance;
+        pauseButton.onClick.AddListener(PauseButtonClick);
+        UIGameOver.Init();
         SetCostText();
         SetLivesText();
+        UnitEvent();
+    }
+
+    void UnitEvent()
+    {
         player.OnChangeMoney += (object sender, EventArgs eventArgs) =>
         {
             SetCostText();

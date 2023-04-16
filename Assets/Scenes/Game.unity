@@ -4185,6 +4185,7 @@ MonoBehaviour:
   livesText: {fileID: 1871522566}
   pauseButton: {fileID: 1530674769}
   gamePausePanel: {fileID: 1572927211}
+  UIGameOver: {fileID: 505136628}
 --- !u!1 &2094851966
 GameObject:
   m_ObjectHideFlags: 0

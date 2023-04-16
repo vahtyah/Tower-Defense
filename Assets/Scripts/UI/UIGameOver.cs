@@ -5,14 +5,12 @@ using UnityEngine;
 
 public class UIGameOver : UIGamePause
 {
-    private void Start()
+    public void Init()
     {
         Player.instance.OnPlayerDie += (object sender, EventArgs eventArgs) =>
         {
-            print("Tuanpro");
             OnPanel();
         };
-        gameObject.SetActive(false);
     }
 
     void OnPanel()
