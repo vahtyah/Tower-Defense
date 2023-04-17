@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour
     }
 
     [SerializeField] float speed = 70f;
+    [SerializeField] int damage = 10;
     Transform target;
     Enemy enemy;
 
@@ -53,6 +54,6 @@ public class Bullet : MonoBehaviour
     private void HitTarget()
     {
         Bullet.Destroy(gameObject);
-        enemy.Damage(10);
+        enemy.Damage(damage);
     }
 }

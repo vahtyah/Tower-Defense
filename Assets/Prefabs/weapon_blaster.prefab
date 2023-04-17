@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e30eecfa2fa2f5c4fa7da65de07f5121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 3
+  costForBuild: 70
   partToRotate: {fileID: 612506336343702730}
   enemyLayer:
     serializedVersion: 2
@@ -112,8 +113,7 @@ MonoBehaviour:
   firePoint: {fileID: 1436435225552921739}
   fireRate: 2
   fireCountdown: 0
-  costForBuild: 0
-  turretPrefabUpgrade: {fileID: 0}
+  turretPrefabUpgrade: {fileID: 2743958339464087252, guid: 23f7b355121513547ac8431fe00b2608, type: 3}
   costRefuns: 0
 --- !u!1 &1431741871087590398
 GameObject:

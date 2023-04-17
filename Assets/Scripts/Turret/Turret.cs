@@ -21,6 +21,7 @@ public class Turret : MonoBehaviour
 
     [Header("General")]
     [SerializeField] float range = 1.5f;
+    [SerializeField] int costForBuild;
     [SerializeField] Transform partToRotate;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] float speedRotation = 10f;
@@ -36,7 +37,6 @@ public class Turret : MonoBehaviour
     [SerializeField] float fireCountdown = 0f;
 
     [Header("Upgrade")]
-    [SerializeField] int costForBuild;
     [SerializeField] Turret turretPrefabUpgrade;
     [SerializeField] int costRefuns;
 
