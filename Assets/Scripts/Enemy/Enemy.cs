@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
         {
             Player.instance.ChangeMoney(money);
             Enemy.Destroy(gameObject);
+            healthSystem.ResetHealth();
         }
     }
 

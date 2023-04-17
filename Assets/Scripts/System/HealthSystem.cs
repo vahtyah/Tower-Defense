@@ -17,6 +17,9 @@ public class HealthSystem
         health = healthMax;
     }
 
+    public void ResetHealth() { health = healthMax;
+        OnHealthChanged?.Invoke(this, EventArgs.Empty);
+    }
     public int GetHealth() { return health; }
     public int GetHealthMax() { return healthMax; }
     public float GetHealthPrecent() { return (float)health / healthMax; }

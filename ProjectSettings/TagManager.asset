@@ -11,6 +11,10 @@ TagManager:
   - Arrow
   - Ballista_1
   - Ballista_2
+  - Ballista_3
+  - Blaster
+  - Bullet Blaster
+  - Effect
   layers:
   - Default
   - TransparentFX

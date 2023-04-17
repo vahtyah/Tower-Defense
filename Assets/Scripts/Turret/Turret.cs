@@ -24,6 +24,7 @@ public class Turret : MonoBehaviour
     [SerializeField] Transform partToRotate;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] float speedRotation = 10f;
+    [SerializeField] GameObject shootEffect;
     [HideInInspector]
     public Collider target;
     
@@ -61,6 +62,8 @@ public class Turret : MonoBehaviour
     {
         if (fireCountdown <= 0f && targetLock)
         {
+            if (shootEffect != null)
+                Effect.Create(shootEffect, firePoint.position, target.transform, this);
             Bullet.Create(bulletPrefab, firePoint, target.transform);
             fireCountdown = 1f / fireRate;
         }
