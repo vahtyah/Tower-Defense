@@ -10,7 +10,7 @@ public class Turret : MonoBehaviour
     {
         var turret = ObjectPooler.instance.ActivateObject(turretPrefab.tag);
         turret.SetActive(true);
-        turret.transform.position = transform.position + new Vector3(0f,.2f,0f);
+        turret.transform.position = transform.position + new Vector3(0f, .2f, 0f);
         return turret;
     }
 
@@ -26,9 +26,10 @@ public class Turret : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] float speedRotation = 10f;
     [SerializeField] GameObject shootEffect;
-    [HideInInspector]
+    [SerializeField] AudioClip shootSound;
+    //[HideInInspector]
     public Collider target;
-    
+
 
     [Header("Use bulletGO")]
     [SerializeField] GameObject bulletPrefab;
@@ -62,6 +63,8 @@ public class Turret : MonoBehaviour
     {
         if (fireCountdown <= 0f && targetLock)
         {
+            if (shootSound != null)
+                AudioSource.PlayClipAtPoint(shootSound, transform.position);
             if (shootEffect != null)
                 Effect.Create(shootEffect, firePoint.position, target.transform, this);
             Bullet.Create(bulletPrefab, firePoint, target.transform);
@@ -75,6 +78,11 @@ public class Turret : MonoBehaviour
         float closestDistance = Mathf.Infinity;
 
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, range, enemyLayer);
+        foreach (Collider collider in hitColliders)
+        {
+            print(range);
+            print(collider);
+        }
         if (hitColliders.Contains(target)) { return; }
         targetLock = false;
         if (hitColliders.Length <= 0)

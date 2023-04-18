@@ -54,6 +54,7 @@ MonoBehaviour:
     m_Bits: 64
   speedRotation: 10
   shootEffect: {fileID: 1337317844278526, guid: 472ed7c77852d9246b992f343f81a8f2, type: 3}
+  shootSound: {fileID: 8300000, guid: ceed5926a63a2244085adb17f49b3b89, type: 3}
   target: {fileID: 0}
   bulletPrefab: {fileID: 3266342904310585502, guid: 339c0d17c67ff174cbf8afa652dc9a6f, type: 3}
   firePoint: {fileID: 2875622991067418313}

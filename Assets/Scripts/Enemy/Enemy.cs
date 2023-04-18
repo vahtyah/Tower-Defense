@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] int money;
     [SerializeField] float speed = 2;
     [SerializeField] float damage;
+    [SerializeField] AudioClip destructionSound;
     public Image healthBar;
 
     HealthSystem healthSystem;
@@ -42,6 +43,7 @@ public class Enemy : MonoBehaviour
         {
             Player.instance.ChangeMoney(money);
             Enemy.Destroy(gameObject);
+            AudioSource.PlayClipAtPoint(destructionSound, transform.position);
             healthSystem.ResetHealth();
         }
     }

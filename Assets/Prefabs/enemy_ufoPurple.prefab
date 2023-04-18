@@ -119,6 +119,7 @@ MonoBehaviour:
   money: 10
   speed: 1.5
   damage: 0
+  destructionSound: {fileID: 8300000, guid: 52813b4616870d743a86e8917a87b42a, type: 3}
   healthBar: {fileID: 148544950950941827}
 --- !u!136 &879133794
 CapsuleCollider:
@@ -131,9 +132,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.49999997
-  m_Height: 0.37119997
+  m_Height: 0.99999994
   m_Direction: 1
-  m_Center: {x: 0, y: 0.18559998, z: 0}
+  m_Center: {x: 0, y: 0.18560001, z: 0}
 --- !u!1001 &3469571342475351917
 PrefabInstance:
   m_ObjectHideFlags: 0

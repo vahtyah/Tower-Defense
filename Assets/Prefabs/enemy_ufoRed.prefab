@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4238075017231006408}
   - component: {fileID: 3418773043429154471}
   - component: {fileID: 5696168964140122745}
+  - component: {fileID: 4341614011318152269}
   m_Layer: 6
   m_Name: enemy_ufoRed
   m_TagString: UFO Red
@@ -105,7 +106,8 @@ MonoBehaviour:
   money: 0
   speed: 2
   damage: 0
-  healthBar: {fileID: 1648072686493602370}
+  destructionSound: {fileID: 8300000, guid: 52813b4616870d743a86e8917a87b42a, type: 3}
+  healthBar: {fileID: 793120733815485886}
 --- !u!114 &5696168964140122745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +121,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pathCells: []
+--- !u!136 &4341614011318152269
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2436542738815867677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.49999997
+  m_Height: 0.99999994
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.32524815, z: 0}
 --- !u!1001 &4118650722266134096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,9 +232,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e3ebcdee1709a942888b104f0593fdb, type: 3}
---- !u!114 &1648072686493602370 stripped
+--- !u!114 &793120733815485886 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3456304231008281618, guid: 4e3ebcdee1709a942888b104f0593fdb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3614657774967161838, guid: 4e3ebcdee1709a942888b104f0593fdb, type: 3}
   m_PrefabInstance: {fileID: 4118650722266134096}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
