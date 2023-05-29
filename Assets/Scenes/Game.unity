@@ -1047,18 +1047,22 @@ MonoBehaviour:
     Enemy: {fileID: 5091990156292907488, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
     SpawnTime: 1.5
     RestTime: 10
+    AmountHealth: 100
   - Amount: 10
     Enemy: {fileID: 5091990156292907488, guid: 017fb991c50b07048afbca3679126ff7, type: 3}
     SpawnTime: 1.5
     RestTime: 10
+    AmountHealth: 100
   - Amount: 10
     Enemy: {fileID: 2436542738815867677, guid: 0326cbb730dc72e4b814f67a77eb7802, type: 3}
     SpawnTime: 1.5
     RestTime: 10
+    AmountHealth: 100
   - Amount: 100
     Enemy: {fileID: 2436542738815867677, guid: 0326cbb730dc72e4b814f67a77eb7802, type: 3}
     SpawnTime: 1.5
     RestTime: 10
+    AmountHealth: 100
   pathCells: []
 --- !u!114 &385075248
 MonoBehaviour:
