@@ -32,6 +32,18 @@ public class EnemyWayManager : MonoBehaviour
     private void Update()
     {
         Spawn();
+        if (waveIndex >= waves.Count)
+        {
+            Enemy[] enemies = transform.GetComponentsInChildren<Enemy>();
+            foreach (Enemy enemy in enemies)
+            {
+                if (enemy.gameObject.activeSelf)
+                {
+                    return;
+                }
+            }
+            Player.instance.OnCompleteLevel();
+        }
     }
 
     private void Spawn()

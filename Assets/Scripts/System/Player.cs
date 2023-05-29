@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public event EventHandler OnChangeMoney;
     public event EventHandler OnChangeLives;
     public event EventHandler OnPlayerDie;
+    public event EventHandler OnPlayerCompleteLevel;
 
     public int Money;
     [SerializeField] int startMoney;
@@ -56,6 +57,11 @@ public class Player : MonoBehaviour
     public int GetLives()
     {
         return lives;
+    }
+
+    public void OnCompleteLevel()
+    {
+        OnPlayerCompleteLevel?.Invoke(this, EventArgs.Empty);
     }
 
     public void DeIncreaseLives()

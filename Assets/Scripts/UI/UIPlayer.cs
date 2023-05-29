@@ -12,12 +12,14 @@ public class UIPlayer : MonoBehaviour
     [SerializeField] Button pauseButton;
     [SerializeField] GameObject gamePausePanel;
     [SerializeField] UIGameOver UIGameOver;
+    [SerializeField] UIGameComplete UIGameComplete;
     Player player;
     private void Start()
     {
         player = Player.instance;
         pauseButton.onClick.AddListener(PauseButtonClick);
         UIGameOver.Init();
+        UIGameComplete.Init();
         SetCostText();
         SetLivesText();
         UnitEvent();

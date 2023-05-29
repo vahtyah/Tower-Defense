@@ -831,8 +831,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0417\u0430\u041F\u0423\u0441\u043A \u0430\u043B\u044C\u0444\u0430-\u0432\u0435\u0440\u0441\u0438\u0438"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
+  m_sharedMaterial: {fileID: 1518267995424714653, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -941,7 +941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 40.3}
+  m_AnchoredPosition: {x: -3, y: 58}
   m_SizeDelta: {x: -0.000030518, y: -211.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &121885383
@@ -964,10 +964,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level 1
+  m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
+  m_sharedMaterial: {fileID: 1518267995424714653, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -991,8 +991,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1076,7 +1076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 40.3}
+  m_AnchoredPosition: {x: 0, y: 58}
   m_SizeDelta: {x: -0.000030518, y: -211.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133134904
@@ -1101,8 +1101,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0422\u0435\u0441\u0442\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
+  m_sharedMaterial: {fileID: 1518267995424714653, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1126,8 +1126,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1809,7 +1809,7 @@ GameObject:
   - component: {fileID: 372894254}
   - component: {fileID: 372894253}
   m_Layer: 0
-  m_Name: Level 2
+  m_Name: Level 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1991,8 +1991,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u041C\u0443\u0437\u044B\u043A\u0430"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 52cbec668a378c24286f43a42cc227f7, type: 2}
+  m_sharedMaterial: {fileID: 2324157790843198497, guid: 52cbec668a378c24286f43a42cc227f7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2477,7 +2477,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000014305, y: -57}
+  m_AnchoredPosition: {x: 4, y: -56}
   m_SizeDelta: {x: 287.2362, y: 92.4663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475450183
@@ -2503,15 +2503,15 @@ MonoBehaviour:
   m_text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C \u043F\u0440\u0435\u0434\u043E\u0441\u0442\u0430\u0432\u043B\u044F\u044E\u0449\u0438\u0439
     \u043E\u0441\u043D\u043E\u0432\u043D\u043E\u0439 \u0433\u0435\u0439\u043C\u043F\u043B\u0435\u0439"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 52cbec668a378c24286f43a42cc227f7, type: 2}
+  m_sharedMaterial: {fileID: 2324157790843198497, guid: 52cbec668a378c24286f43a42cc227f7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4281348156
+  m_fontColor: {r: 0.23584908, g: 0.18801177, b: 0.18801177, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2528,8 +2528,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.45
-  m_fontSizeBase: 27.45
+  m_fontSize: 27
+  m_fontSizeBase: 27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5343,7 +5343,7 @@ GameObject:
   - component: {fileID: 1126290624}
   - component: {fileID: 1126290623}
   m_Layer: 0
-  m_Name: Level 1
+  m_Name: "\u0422\u0435\u0441\u0442\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7443,7 +7443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000014305, y: -57}
+  m_AnchoredPosition: {x: 36, y: -54}
   m_SizeDelta: {x: 287.2362, y: 92.4663}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1456881403
@@ -7466,17 +7466,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Don't allow enemies to rush thround
+  m_text: "\u041D\u0435 \u043F\u043E\u0437\u0432\u043E\u043B\u044F\u0439\u0442\u0435
+    \u0432\u0440\u0430\u0433\u0430\u043C \u043C\u0447\u0430\u0442\u044C\u0441\u044F"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 52cbec668a378c24286f43a42cc227f7, type: 2}
+  m_sharedMaterial: {fileID: 2324157790843198497, guid: 52cbec668a378c24286f43a42cc227f7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4281348156
+  m_fontColor: {r: 0.23529412, g: 0.1882353, b: 0.1882353, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8540,8 +8541,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0432\u044B\u0445\u043E\u0434"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
+  m_sharedMaterial: {fileID: 1518267995424714653, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9561,8 +9562,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
+  m_sharedMaterial: {fileID: 1518267995424714653, guid: 7b79b9b24a973f7449d3f339cc104ac8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
