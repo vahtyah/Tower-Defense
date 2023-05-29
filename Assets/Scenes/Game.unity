@@ -1121,6 +1121,7 @@ MonoBehaviour:
   Money: 0
   startMoney: 99999
   lives: 3
+  amoutOfMoneyIncrease: 0
 --- !u!1 &424699922
 GameObject:
   m_ObjectHideFlags: 0

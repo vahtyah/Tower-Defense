@@ -23,11 +23,22 @@ public class Player : MonoBehaviour
     public int Money;
     [SerializeField] int startMoney;
     [SerializeField] int lives = 3;
+    [SerializeField] int amoutOfMoneyIncrease = 2;
 
     private void Awake()
     {
         Money = startMoney;
         print("Money's Player: " + Money);
+        StartCoroutine(IncreaseMoney(2, 1f));
+    }
+
+    IEnumerator IncreaseMoney(int amount,float distance)
+    {
+        while (true)
+        {
+            ChangeMoney(amount);
+            yield return new WaitForSeconds(distance);
+        }
     }
 
     public void ChangeMoney(int money)

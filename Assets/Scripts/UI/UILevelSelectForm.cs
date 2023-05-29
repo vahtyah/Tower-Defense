@@ -18,8 +18,8 @@ public class UILevelSelectForm : MonoBehaviour
         UIMenu.SetActive(true);
     }
 
-    public void OnLevel1Click()
+    public void OnLevelClick(int level)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(level);
     }
 }

@@ -42,7 +42,7 @@ public class UIPlayer : MonoBehaviour
 
     void SetLivesText()
     {
-        livesText.text = player.GetLives().ToString() + " Live";
+        livesText.text = player.GetLives().ToString() + " Lives";
     }
 
     void PauseButtonClick()

@@ -12,6 +12,7 @@ public class EnemyWayManager : MonoBehaviour
         public GameObject Enemy;
         public float SpawnTime;
         public float RestTime;
+        public int AmountHealth;
     }
 
     [SerializeField] List<Wave> waves;
@@ -53,7 +54,7 @@ public class EnemyWayManager : MonoBehaviour
 
         if (spawnTime < 0)
         {
-            Enemy.Create(currentWave.Enemy);
+            Enemy.Create(currentWave.Enemy, currentWave.AmountHealth);
             spawnTime = currentWave.SpawnTime;
             currentWave.Amount--;
             return;
